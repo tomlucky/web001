@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^add/$', views.add),
     url(r'^context/$', views.contexttest),
+    url(r'^qrcode/(.+)$', views.generate_qrcode, name='qrcode'),
 ]

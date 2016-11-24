@@ -1,6 +1,8 @@
 #!/usr/bin/python
 from django.shortcuts import render
-
+from django.http import HttpResponse
+import qrcode
+from cStringIO import StringIO
 from web001 import models
 
 from django.http import JsonResponse
@@ -23,3 +25,14 @@ def add(req):
 
 def contexttest(req):
     return render(req, 'context.html')
+
+
+def generate_qrcode(request, data):
+    img = qrcode.make(data)
+    buf = StringIO()
+    img.save(buf)
+    image_stram = buf.getvalue()
+    response = HttpResponse(image_stram, content_type='image/png')
+    response['Last-Modified'] = 'Mon, 27 Apr 2015 02:05:03 GMT'
+    response['Cache-Control'] = 'max-age=31536000'
+    return response
