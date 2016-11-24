@@ -6,6 +6,8 @@ from django.contrib import auth
 
 from web001 import models
 
+from django.http import JsonResponse
+
 
 def index(request):
     allPeople = models.Person.objects.all()
@@ -18,4 +20,5 @@ def add(req):
     d = req.GET['d']
     a = int(a)
     d = int(d)
-    return HttpResponse(str(a + d))
+
+    return JsonResponse(range(a, d, 1), safe=False)
