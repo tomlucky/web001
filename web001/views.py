@@ -1,8 +1,5 @@
 #!/usr/bin/python
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
 from django.shortcuts import render
-from django.contrib import auth
 
 from web001 import models
 
@@ -22,3 +19,7 @@ def add(req):
     d = int(d)
 
     return JsonResponse(range(a, d, 1), safe=False)
+
+
+def contexttest(req):
+    return render(req, 'context.html')

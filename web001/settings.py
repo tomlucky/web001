@@ -64,6 +64,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'web001.context_processor.settings',
+                'web001.context_processor.ip_address',
+
             ],
         },
     },
@@ -106,13 +109,10 @@ STATICFILES = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS=False
-EMAIL_HOST='smtp.tomlucky.com'
-EMAIL_PORT=25
-EMAIL_HOST_USER='robot@tomlucky.com'
-EMAIL_HOST_PASSWORD='xxx'
-DEFAULT_FROM_EMAIL='TomRobot <robot@tomlucky.com>'
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.tomlucky.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'robot@tomlucky.com'
+EMAIL_HOST_PASSWORD = 'xxx'
+DEFAULT_FROM_EMAIL = 'TomRobot <robot@tomlucky.com>'
