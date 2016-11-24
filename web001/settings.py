@@ -25,7 +25,7 @@ SECRET_KEY = '*rlix(o3a-jrggy*t+(5a0ui5$x$le7_8aed*%-$2uy5o_5@*s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'web001'
 )
 
 MIDDLEWARE_CLASSES = (
