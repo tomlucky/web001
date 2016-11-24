@@ -4,7 +4,10 @@ from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.contrib import auth
 
+from web001 import models
 
-def index(req):
+
+def index(request):
+    allPeople = models.Person.objects.all()
     myList = ["1"] * 10
-    return render(req, 'index.html', {'myList': myList})
+    return render(request, 'index.html', {'myList': myList, 'allPeople': allPeople})
