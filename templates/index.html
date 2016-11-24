@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-this the index Page!
-</body>
-</html>
+
+{% extends 'base.html' %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block content %}
+    this is home's content
+
+    {% for i in myList %}
+        {{ i }}<br/>
+    {% endfor %}
+
+{% endblock %}
