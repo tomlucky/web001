@@ -1,4 +1,11 @@
 from django.contrib import admin
-from .models import Person
+from web001.models import Person
 
-admin.site.register(Person)
+
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ('name', 'age')
+
+    search_fields = ['name', 'age']
+
+
+admin.site.register(Person, PersonAdmin)

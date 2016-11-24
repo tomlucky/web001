@@ -11,3 +11,11 @@ def index(request):
     allPeople = models.Person.objects.all()
     myList = ["1"] * 10
     return render(request, 'index.html', {'myList': myList, 'allPeople': allPeople})
+
+
+def add(req):
+    a = req.GET['a']
+    d = req.GET['d']
+    a = int(a)
+    d = int(d)
+    return HttpResponse(str(a + d))
