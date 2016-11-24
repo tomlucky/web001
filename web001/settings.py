@@ -1,3 +1,4 @@
+# coding=utf8
 """
 Django settings for web001 project.
 
@@ -15,7 +16,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -26,7 +26,6 @@ SECRET_KEY = '*rlix(o3a-jrggy*t+(5a0ui5$x$le7_8aed*%-$2uy5o_5@*s'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
-
 
 # Application definition
 
@@ -72,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'web001.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -82,7 +80,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -97,8 +94,25 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES = (
+    os.path.join(BASE_DIR, 'web001/../templates/../static'),
+)
+
+# 和上传，存储的文件有关
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS=False
+EMAIL_HOST='smtp.tomlucky.com'
+EMAIL_PORT=25
+EMAIL_HOST_USER='robot@tomlucky.com'
+EMAIL_HOST_PASSWORD='xxx'
+DEFAULT_FROM_EMAIL='TomRobot <robot@tomlucky.com>'
+
