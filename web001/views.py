@@ -11,7 +11,7 @@ from django.http import JsonResponse
 def index(request):
     allPeople = models.Person.objects.all()
     myList = ["1"] * 10
-    return render(request, 'index.html', {'myList': myList, 'allPeople': allPeople})
+    return render(request, 'index_test.html', {'myList': myList, 'allPeople': allPeople})
 
 
 def add(req):
