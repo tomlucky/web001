@@ -20,21 +20,23 @@
 <body>
 
 <div class="container">
-    <div style="background:#cc0; color:#FFF" class="row">
+    <div class="row">
         <div class="col-xs-12">
             {% include 'mainTitle.html' %}
         </div>
     </div>
-    <div class="row" style="background:#1a0; color:#FFF">
+    <div class="row">
         <div class="col-xs-12">
             {% include 'nav.html' %}
         </div>
     </div>
     <div class="row">
-        <div class="col-md-9" style="background:#ccc; color:#FFF">
+        <div class="col-md-9">
 
             <div id="myTabContent" class="tab-content">
-
+                <br/>
+                <br/>
+                <br/>
                 {% for titleEnName in titles %}
                     {% if forloop.first %}
                         <div class="tab-pane fade in active" id="{{ titleEnName.enName }}">
@@ -67,17 +69,17 @@
             {#                <div>this is default content!</div>#}
             {#            {% endblock %}#}
         </div>
-        <div class="col-md-3" style="background:#ca1; color:#FFF">
+        <div class="col-md-3">
             {% include 'aboutShort.html' %}
             {% include 'search.html' %}
             {% include 'recent10.html' %}
-            {% include 'archives.html' %}
             {% include 'elseWhere.html' %}
+            {% include 'archives.html' %}
         </div>
     </div>
 
 
-    <div class="row" style="background:#1a0; color:#FFF">
+    <div class="row">
         <div class="col-xs-12">
             {% include 'bottom.html' %}
 
