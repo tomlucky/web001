@@ -1,51 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <style type="text/css">
-        /* Custom Styles */
-        ul.nav-tabs {
-            width: 140px;
-            margin-top: 20px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
-        }
-
-        ul.nav-tabs li {
-            margin: 0;
-            border-top: 1px solid #ddd;
-        }
-
-        ul.nav-tabs li:first-child {
-            border-top: none;
-        }
-
-        ul.nav-tabs li a {
-            margin: 0;
-            padding: 8px 16px;
-            border-radius: 0;
-        }
-
-        ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover {
-            color: #fff;
-            background: #0088cc;
-            border: 1px solid #0088cc;
-        }
-
-        ul.nav-tabs li:first-child a {
-            border-radius: 4px 4px 0 0;
-        }
-
-        ul.nav-tabs li:last-child a {
-            border-radius: 0 0 4px 4px;
-        }
-
-        ul.nav-tabs.affix {
-            top: 30px; /* Set the top position of pinned element */
-        }
-    </style>
 <head>
-
 
     <meta charset="UTF-8">
     {#support mobiles#}
@@ -61,20 +17,60 @@
         this is the default title
     {% endblock %}</title>
 </head>
-<body data-spy="scroll" data-target="#myScrollspy">
-{% include 'mainTitle.html' %}
+<body>
+
+<div class="container">
+    <div style="background:#cc0; color:#FFF" class="row">
+        <div class="col-xs-12">
+            {% include 'mainTitle.html' %}
+        </div>
+    </div>
+    <div class="row" style="background:#1a0; color:#FFF">
+        <div class="col-xs-12">
+            {% include 'nav.html' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9" style="background:#ccc; color:#FFF">
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="home">
+                    <p>自强学堂是一个提供最新的web技术的站点，我们将将国外的精华教程收集到国内, 让每个人享受平等学习的机会!我们的目标是只要你坚持来自强学堂,我们提供的教程就能让你变得更强!</p>
+                </div>
+                <div class="tab-pane fade" id="ios">
+                    <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                        TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+                </div>
+                <div class="tab-pane fade" id="jmeter">
+                    <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+                </div>
+                <div class="tab-pane fade" id="ejb">
+                    <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+                    </p>
+                </div>
+            </div>
+            {#            {% block content %}#}
+            {#                <div>this is default content!</div>#}
+            {#            {% endblock %}#}
+        </div>
+        <div class="col-md-3" style="background:#ca1; color:#FFF">
+            {% include 'aboutShort.html' %}
+            {% include 'search.html' %}
+            {% include 'recent10.html' %}
+            {% include 'archives.html' %}
+            {% include 'elseWhere.html' %}
+        </div>
+    </div>
 
 
-{% include 'nav.html' %}
+    <div class="row" style="background:#1a0; color:#FFF">
+        <div class="col-xs-12">
+            {% include 'bottom.html' %}
 
-{% block content %}
-    <div>this is default content!</div>
-{% endblock %}
+            {% include 'tongji.html' %}
+        </div>
+    </div>
+</div>
 
-
-{% include 'bottom.html' %}
-
-{% include 'tongji.html' %}
 
 </body>
 </html>
