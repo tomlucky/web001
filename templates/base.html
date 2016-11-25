@@ -21,7 +21,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
+        {#    <div class="row" style="background:#1a0; color:#FFF">#}
+        <div class="col-xs-10">
             {% include 'mainTitle.html' %}
         </div>
     </div>
@@ -65,16 +66,49 @@
                 {#                    </p>#}
                 {#                </div>#}
             </div>
+            <div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="disabled">
+                          <span>
+                              <span aria-hidden="true">&laquo;</span>
+                          </span>
+                        </li>
+                        <li class="active">
+                            <span>1 <span class="sr-only">(current)</span></span>
+                        </li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <nav aria-label="...">
+                <ul class="pager">
+                    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+                    <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+            </nav>
             {#            {% block content %}#}
             {#                <div>this is default content!</div>#}
             {#            {% endblock %}#}
         </div>
-        <div class="col-md-3">
-            {% include 'aboutShort.html' %}
+        <div class="col-sm-3  blog-sidebar">
+            <br>
             {% include 'search.html' %}
-            {% include 'recent10.html' %}
-            {% include 'elseWhere.html' %}
+            <br>
+            {#            {% include 'aboutShort.html' %}#}
+            {% include 'recent.html' %}
+            {% include 'catigory.html' %}
             {% include 'archives.html' %}
+            {% include 'elseWhere.html' %}
         </div>
     </div>
 
