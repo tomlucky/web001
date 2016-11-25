@@ -18,7 +18,7 @@ from django.contrib import admin
 from web001 import views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^tomlucky/', include(admin.site.urls)),
     url(r'^$', views.index),
     url(r'^add/$', views.add),
     url(r'^context/$', views.contexttest),
