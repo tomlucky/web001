@@ -17,7 +17,8 @@ from web001.models import *
 
 def index(request):
     titles = Titles.objects.all()
-    return render(request, 'index.html', {'titles': titles})
+    posts = Posts.objects.all()
+    return render(request, 'index.html', {'titles': titles, 'posts': posts})
 
 
 def add(req):
