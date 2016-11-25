@@ -2,7 +2,6 @@
 {#<ul id="myTab" class="nav nav-tabs nav-justified">#}
 {#<ul id="myTab" class="nav nav-pills ">#}
 <ul id="myTab" class="nav nav-tabs ">
-
     {% for titleEnName in titles %}
         {% if forloop.first %}
             <li class="active"><a href="#{{ titleEnName.enName }}" data-toggle="tab">{{ titleEnName.enName }}</a>
