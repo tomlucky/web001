@@ -6,6 +6,7 @@ from cStringIO import StringIO
 from web001 import models
 
 from django.http import JsonResponse
+from web001.models import *
 
 
 #
@@ -15,7 +16,8 @@ from django.http import JsonResponse
 #     return render(request, 'index_test.html', {'myList': myList, 'allPeople': allPeople})
 
 def index(request):
-    return render(request, 'index.html')
+    titles = Titles.objects.all()
+    return render(request, 'index.html', {'titles': titles})
 
 
 def add(req):
