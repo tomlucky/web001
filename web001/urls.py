@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^add/$', views.add),
     url(r'^context/$', views.contexttest),
     url(r'^qrcode/(.+)$', views.generate_qrcode, name='qrcode'),
+    url(r'^bstest/$', views.bstest, name='bstest'),
 ]

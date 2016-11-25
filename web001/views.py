@@ -36,3 +36,7 @@ def generate_qrcode(request, data):
     response['Last-Modified'] = 'Mon, 27 Apr 2015 02:05:03 GMT'
     response['Cache-Control'] = 'max-age=31536000'
     return response
+
+
+def bstest(req):
+    return render(req, 'bstest.html')
